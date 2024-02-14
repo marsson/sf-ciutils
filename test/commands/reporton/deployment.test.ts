@@ -15,26 +15,25 @@ describe('reporton deployment', () => {
     $$.restore();
   });
 
-  it('runs hello', async () => {
-    await ReportonDeployment.run([]);
+  it('runs reporton deployment with a specific deployment ID', async () => {
+    // Replace '0AfExampleId' with a mock or example deployment ID appropriate for your tests
+    const deploymentId = '0AfExampleId';
+    await ReportonDeployment.run(['--deploymentid', deploymentId, '--target-org', 'testOrg']);
     const output = sfCommandStubs.log
       .getCalls()
       .flatMap((c) => c.args)
       .join('\n');
-    expect(output).to.include('hello world');
+    // Adjust expected output based on your command's logging
+    expect(output).to.include(`Deployment ID | ${deploymentId}`);
   });
 
-  it('runs hello with --json and no provided name', async () => {
-    const result = await ReportonDeployment.run([]);
-    expect(result.path).to.equal('/Users/marcelo.cost/Projects/ciutils/src/commands/reporton/deployment.ts');
+  it('runs reporton deployment with --json and specific deployment ID', async () => {
+    const deploymentId = '0AfExampleId';
+    const result = await ReportonDeployment.run(['--deploymentid', deploymentId, '--target-org', 'testOrg', '--json']);
+    // Adjust these expectations based on the actual JSON output of your command
+    expect(result.id).to.equal(deploymentId);
+    // Add additional checks as needed for other properties in your JSON output
   });
 
-  it('runs hello world --name Astro', async () => {
-    await ReportonDeployment.run(['--name', 'Astro']);
-    const output = sfCommandStubs.log
-      .getCalls()
-      .flatMap((c) => c.args)
-      .join('\n');
-    expect(output).to.include('hello Astro');
-  });
+  // Add additional tests as necessary for other scenarios, such as awaiting completion, invalid IDs, etc.
 });
