@@ -13,16 +13,18 @@ describe('reporton deployment NUTs', () => {
     await testSession?.clean();
   });
 
-  it('should report on a specific deployment', () => {
-    // Assuming the command format is "sf reporton deployment --deploymentid <id> --json"
-    // Replace <deploymentId> with a valid deployment ID for testing
-    const deploymentId = '<deploymentId>';
-    const result = execCmd<ReportonDeploymentResult>(`reporton deployment --deploymentid ${deploymentId} --json`, {
+  it('should report on a specific deployment with a mock ID', () => {
+    // Use a mock deployment ID of valid length for testing
+    const mockDeploymentId = '0Af123456789012'; // 15 characters, mock ID
+    const result = execCmd<ReportonDeploymentResult>(`reporton deployment --deploymentid ${mockDeploymentId} --json`, {
       ensureExitCode: 0,
     }).jsonOutput?.result;
-    expect(result?.id).to.equal(deploymentId);
-    // Add more assertions here as needed based on the expected output of your command
+    expect(result?.id).to.equal(mockDeploymentId);
+    // The assertion checks if the command correctly processes and outputs the mock ID
   });
+
+  // The following test assumes you're implementing a similar scenario but might want to check for specific outcomes or errors
+  // Ensure to replace or adjust scenarios based on your command's functionality and expected behavior
 
   // Add more test cases here for different scenarios, such as invalid deployment IDs, awaiting completion, etc.
 });
