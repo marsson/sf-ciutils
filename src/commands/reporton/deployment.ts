@@ -7,11 +7,7 @@ import Table from 'cli-table3';
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
 const messages = Messages.loadMessages('ciutils', 'reporton.deployment');
 
-export type ReportonDeploymentResult = {
-  id: string;
-  path: string;
-};
-
+export type ReportonDeploymentResult = DeployResult;
 export default class ReportonDeployment extends SfCommand<ReportonDeploymentResult> {
   public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
@@ -56,10 +52,7 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
 
     this.printDeploymentReport();
 
-    return {
-      id: deploymentId,
-      path: '/Users/marcelo.cost/Projects/ciutils/src/commands/reporton/deployment.ts',
-    };
+    return this.deploymentStatus;
   }
 
   // Placeholder: Initialize your progress bar here

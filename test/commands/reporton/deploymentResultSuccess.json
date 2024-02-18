@@ -1,0 +1,2265 @@
+{
+  "status": 0,
+  "result": {
+    "checkOnly": false,
+    "completedDate": "2024-02-13T03:39:41.000Z",
+    "createdBy": "0058Y00000BTTvo",
+    "createdByName": "Marcelo Marsson Goncalves da Costa",
+    "createdDate": "2024-02-13T03:39:09.000Z",
+    "details": {
+      "componentSuccesses": [
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Tags__c",
+          "id": "00N8C000000hBfjUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Thumbnail_IMG__c",
+          "id": "00N8C000000hBfpUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Status__c",
+          "id": "00N8C000000hBfiUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.State__c",
+          "id": "00N8C000000hBfhUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Record_Link__c",
+          "id": "00N8C000000hBfgUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Price__c",
+          "id": "00N8C000000hBffUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Price_Sold__c",
+          "id": "00N8C000000hBfeUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Picture__c",
+          "id": "00N8C000000hBfdUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Picture_IMG__c",
+          "id": "00N8C000000hBfoUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Location__c",
+          "id": "00N8C000000hBfcUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Thumbnail__c",
+          "id": "00N8C000000hBfkUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Zip__c",
+          "id": "00N8C000000hBflUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Broker_Id__c",
+          "id": "00N8C000000hBfKUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Email__c",
+          "id": "00N8C000000hBfLUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Mobile_Phone__c",
+          "id": "00N8C000000hBfMUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Phone__c",
+          "id": "00N8C000000hBfNUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Picture_IMG__c",
+          "id": "00N8C000000hBfmUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Picture__c",
+          "id": "00N8C000000hBfOUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Title__c",
+          "id": "00N8C000000hBfPUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Address__c",
+          "id": "00N8C000000hBfQUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Assessed_Value__c",
+          "id": "00N8C000000hBfRUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Baths__c",
+          "id": "00N8C000000hBfSUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Beds__c",
+          "id": "00N8C000000hBfTUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Broker__c",
+          "id": "00N8C000000hBfUUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.City__c",
+          "id": "00N8C000000hBfVUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Date_Agreement__c",
+          "id": "00N8C000000hBfWUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Date_Closed__c",
+          "id": "00N8C000000hBfXUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Date_Contracted__c",
+          "id": "00N8C000000hBfYUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Date_Listed__c",
+          "id": "00N8C000000hBfZUAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Date_Pre_Market__c",
+          "id": "00N8C000000hBfaUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Days_On_Market__c",
+          "id": "00N8C000000hBfnUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomField",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:19.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Description__c",
+          "id": "00N8C000000hBfbUAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/PropertyController.cls",
+          "fullName": "PropertyController",
+          "id": "01p8C0000006Ji6QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/PagedResult.cls",
+          "fullName": "PagedResult",
+          "id": "01p8C0000006Ji5QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/GeocodingServiceTest.cls",
+          "fullName": "GeocodingServiceTest",
+          "id": "01p8C0000006Ji4QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/GeocodingService.cls",
+          "fullName": "GeocodingService",
+          "id": "01p8C0000006Ji3QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/TestSampleDataController.cls",
+          "fullName": "TestSampleDataController",
+          "id": "01p8C0000006Ji9QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/FileUtilities.cls",
+          "fullName": "FileUtilities",
+          "id": "01p8C0000006Ji1QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/TestPropertyController.cls",
+          "fullName": "TestPropertyController",
+          "id": "01p8C0000006Ji8QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/SampleDataController.cls",
+          "fullName": "SampleDataController",
+          "id": "01p8C0000006Ji7QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:25.000Z",
+          "deleted": false,
+          "fileName": "classes/FileUtilitiesTest.cls",
+          "fullName": "FileUtilitiesTest",
+          "id": "01p8C0000006Ji2QAE",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "StaticResource",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "staticresources/sample_data_properties.resource",
+          "fullName": "sample_data_properties",
+          "id": "0818C000000Cp0xQAC",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "LightningMessageChannel",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "messageChannels/FiltersChange.messageChannel",
+          "fullName": "FiltersChange",
+          "id": "1298C0000008P4KQAU",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "LightningMessageChannel",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "messageChannels/PropertySelected.messageChannel",
+          "fullName": "PropertySelected",
+          "id": "1298C0000008P4LQAU",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/barcodeScanner",
+          "fullName": "barcodeScanner",
+          "id": "0Rb8C0000004msSSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/brokerCard",
+          "fullName": "brokerCard",
+          "id": "0Rb8C0000004msTSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/daysOnMarket",
+          "fullName": "daysOnMarket",
+          "id": "0Rb8C0000004msUSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/errorPanel",
+          "fullName": "errorPanel",
+          "id": "0Rb8C0000004msVSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/ldsUtils",
+          "fullName": "ldsUtils",
+          "id": "0Rb8C0000004msWSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/listContactsFromDevice",
+          "fullName": "listContactsFromDevice",
+          "id": "0Rb8C0000004msXSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/navigateToRecord",
+          "fullName": "navigateToRecord",
+          "id": "0Rb8C0000004msYSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/paginator",
+          "fullName": "paginator",
+          "id": "0Rb8C0000004msZSAQ",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyCarousel",
+          "fullName": "propertyCarousel",
+          "id": "0Rb8C0000004msaSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyFilter",
+          "fullName": "propertyFilter",
+          "id": "0Rb8C0000004msbSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyListMap",
+          "fullName": "propertyListMap",
+          "id": "0Rb8C0000004mscSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyLocation",
+          "fullName": "propertyLocation",
+          "id": "0Rb8C0000004msdSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyMap",
+          "fullName": "propertyMap",
+          "id": "0Rb8C0000004mseSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertySummary",
+          "fullName": "propertySummary",
+          "id": "0Rb8C0000004msfSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyTile",
+          "fullName": "propertyTile",
+          "id": "0Rb8C0000004msgSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/propertyTileList",
+          "fullName": "propertyTileList",
+          "id": "0Rb8C0000004mshSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "LightningComponentBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "lwc/sampleDataImporter",
+          "fullName": "sampleDataImporter",
+          "id": "0Rb8C0000004msiSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "AuraDefinitionBundle",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "aura/pageTemplate_2_7_3",
+          "fullName": "pageTemplate_2_7_3",
+          "id": "0Ab8C0000008e5bSAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomObject",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c",
+          "id": "01I8C0000000VC9UAM",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomObject",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c",
+          "id": "01I8C0000000VCAUA2",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CompactLayout",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.Broker_Compact",
+          "id": "0AH8C0000004HZaWAM",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CompactLayout",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.Property_Compact_Layout",
+          "id": "0AH8C0000004HZbWAM",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ListView",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "objects/Broker__c.object",
+          "fullName": "Broker__c.All",
+          "id": "00B8C000001EiDeUAK",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ListView",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "objects/Property__c.object",
+          "fullName": "Property__c.All",
+          "id": "00B8C000001EiDfUAK",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "Layout",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "layouts/Broker__c-Broker Layout.layout",
+          "fullName": "Broker__c-Broker Layout",
+          "id": "00h8C000000F7FsQAK",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "Layout",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "layouts/Property__c-Property Layout.layout",
+          "fullName": "Property__c-Property Layout",
+          "id": "00h8C000000F7FtQAK",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "FlexiPage",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "flexipages/Broker_Record_Page.flexipage",
+          "fullName": "Broker_Record_Page",
+          "id": "0M08C000000H0YNSA0",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "FlexiPage",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "flexipages/Property_Explorer.flexipage",
+          "fullName": "Property_Explorer",
+          "id": "0M08C000000H0YRSA0",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "FlexiPage",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "flexipages/Property_Finder.flexipage",
+          "fullName": "Property_Finder",
+          "id": "0M08C000000H0YOSA0",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "FlexiPage",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "flexipages/Property_Record_Page.flexipage",
+          "fullName": "Property_Record_Page",
+          "id": "0M08C000000H0YPSA0",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "FlexiPage",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "flexipages/Settings.flexipage",
+          "fullName": "Settings",
+          "id": "0M08C000000H0YQSA0",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomTab",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "tabs/Broker__c.tab",
+          "fullName": "Broker__c",
+          "id": "01r8C0000000IBEQA2",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomTab",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "tabs/Property_Explorer.tab",
+          "fullName": "Property_Explorer",
+          "id": "01r8C0000000IBFQA2",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomTab",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "tabs/Property_Finder.tab",
+          "fullName": "Property_Finder",
+          "id": "01r8C0000000IBGQA2",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomTab",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "tabs/Property__c.tab",
+          "fullName": "Property__c",
+          "id": "01r8C0000000IBHQA2",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "CustomTab",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "tabs/Settings.tab",
+          "fullName": "Settings",
+          "id": "01r8C0000000IBIQA2",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomApplication",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "applications/Dreamhouse.app",
+          "fullName": "Dreamhouse",
+          "id": "02u8C0000000EQZQA2",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "Flow",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "flows/Create_property.flow",
+          "fullName": "Create_property",
+          "id": "3018C0000006dUqQAI",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "ContentAsset",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "contentassets/dreamhouselogosquare.asset",
+          "fullName": "dreamhouselogosquare",
+          "id": "03S8C000000Guh8UAC",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "PermissionSet",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "permissionsets/dreamhouse.permissionset",
+          "fullName": "dreamhouse",
+          "id": "0PS8C000000968HWAQ",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "RemoteSiteSetting",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "remoteSiteSettings/nominatim_openstreetmap.remoteSite",
+          "fullName": "nominatim_openstreetmap",
+          "id": "0rp8C000000981eQAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "Prompt",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "prompts/Property.prompt",
+          "fullName": "Property",
+          "id": "0bs8C000000CpIIQA0",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "Prompt",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "prompts/PropertyExplorer.prompt",
+          "fullName": "PropertyExplorer",
+          "id": "0bs8C000000CpIJQA0",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "Prompt",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "prompts/PropertyFinder.prompt",
+          "fullName": "PropertyFinder",
+          "id": "0bs8C000000CpIKQA0",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "package.xml",
+          "fullName": "package.xml",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "StaticResource",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "staticresources/leafletjs.resource",
+          "fullName": "leafletjs",
+          "id": "0818C000000Cp0uQAC",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "StaticResource",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "staticresources/sample_data_brokers.resource",
+          "fullName": "sample_data_brokers",
+          "id": "0818C000000Cp0vQAC",
+          "success": true
+        },
+        {
+          "changed": false,
+          "componentType": "StaticResource",
+          "created": false,
+          "createdDate": "2024-02-13T03:39:29.000Z",
+          "deleted": false,
+          "fileName": "staticresources/sample_data_contacts.resource",
+          "fullName": "sample_data_contacts",
+          "id": "0818C000000Cp0wQAC",
+          "success": true
+        }
+      ],
+      "runTestResult": {
+        "codeCoverage": [
+          {
+            "id": "01p8Y0000057uwrQAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 21,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 51,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 87,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 93,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 111,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 112,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 113,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 114,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 115,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 116,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 117,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 118,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 119,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 120,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 126,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 128,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 129,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 130,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 132,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 133,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 134,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "LightningSelfRegisterController",
+            "namespace": null,
+            "numLocations": 77,
+            "numLocationsNotCovered": 21,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v82QAA",
+            "name": "SiteLoginController",
+            "namespace": null,
+            "numLocations": 6,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057uwsQAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 15,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 16,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 24,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 26,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 27,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 28,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 30,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 31,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 32,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "LightningForgotPasswordController",
+            "namespace": null,
+            "numLocations": 18,
+            "numLocationsNotCovered": 9,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v59QAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 10,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 40,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 41,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 42,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 43,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 51,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 52,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 53,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "MicrobatchSelfRegController",
+            "namespace": null,
+            "numLocations": 40,
+            "numLocationsNotCovered": 8,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057uwqQAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 8,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 9,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 10,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 11,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 12,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 14,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 15,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 35,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 41,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 42,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 43,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 54,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 56,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 57,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 58,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 60,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 61,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 62,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "LightningLoginFormController",
+            "namespace": null,
+            "numLocations": 33,
+            "numLocationsNotCovered": 18,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v6mQAA",
+            "name": "CommunitiesSelfRegConfirmController",
+            "namespace": null,
+            "numLocations": 1,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v76QAA",
+            "name": "CommunitiesLoginController",
+            "namespace": null,
+            "numLocations": 5,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v5tQAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 39,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 40,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 43,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 44,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 45,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "SiteRegisterController",
+            "namespace": null,
+            "numLocations": 27,
+            "numLocationsNotCovered": 5,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v5vQAA",
+            "name": "CommunitiesLandingController",
+            "namespace": null,
+            "numLocations": 3,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v7VQAQ",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 15,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "ForgotPasswordController",
+            "namespace": null,
+            "numLocations": 9,
+            "numLocationsNotCovered": 1,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v6BQAQ",
+            "name": "ChangePasswordController",
+            "namespace": null,
+            "numLocations": 6,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01q8Y000000Wm9QQAS",
+            "name": "AccountTrigger",
+            "namespace": null,
+            "numLocations": 0,
+            "numLocationsNotCovered": 0,
+            "type": "Trigger",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v5qQAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 21,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 37,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 38,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "MyProfilePageController",
+            "namespace": null,
+            "numLocations": 24,
+            "numLocationsNotCovered": 3,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8C0000006Ji3QAE",
+            "name": "GeocodingService",
+            "namespace": null,
+            "numLocations": 36,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y0000057v7aQAA",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 16,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 51,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 52,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 53,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 54,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 63,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 64,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 67,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 68,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 69,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "CommunitiesSelfRegController",
+            "namespace": null,
+            "numLocations": 42,
+            "numLocationsNotCovered": 10,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8C0000006Ji1QAE",
+            "name": "FileUtilities",
+            "namespace": null,
+            "numLocations": 17,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8C0000006Ji6QAE",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 26,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 31,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "PropertyController",
+            "namespace": null,
+            "numLocations": 44,
+            "numLocationsNotCovered": 2,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8C0000006Ji5QAE",
+            "name": "PagedResult",
+            "namespace": null,
+            "numLocations": 4,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8C0000006Ji7QAE",
+            "name": "SampleDataController",
+            "namespace": null,
+            "numLocations": 34,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y000006WsvHQAS",
+            "name": "TriggerHandler",
+            "namespace": null,
+            "numLocations": 117,
+            "numLocationsNotCovered": 0,
+            "type": "Class",
+            "dmlInfo": [],
+            "locationsNotCovered": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01p8Y000006WsvIQAS",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 11,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 12,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 13,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 14,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 15,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 16,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 17,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 18,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 21,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 22,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 23,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 25,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 26,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 29,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 30,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 33,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 34,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 36,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "TriggerHandlerHelper",
+            "namespace": null,
+            "numLocations": 18,
+            "numLocationsNotCovered": 18,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          }
+        ],
+        "numFailures": 0,
+        "numTestsRun": 51,
+        "successes": [
+          {
+            "id": "01p8Y0000057uxbQAA",
+            "methodName": "testChangePasswordController",
+            "name": "ChangePasswordControllerTest",
+            "namespace": null,
+            "time": 25
+          },
+          {
+            "id": "01p8Y0000057uxfQAA",
+            "methodName": "testCommunitiesSelfRegController",
+            "name": "CommunitiesSelfRegControllerTest",
+            "namespace": null,
+            "time": 71
+          },
+          {
+            "id": "01p8Y0000057uxeQAA",
+            "methodName": "testCommunitiesSelfRegConfirmController",
+            "name": "CommunitiesSelfRegConfirmControllerTest",
+            "namespace": null,
+            "time": 69
+          },
+          {
+            "id": "01p8Y0000057uxdQAA",
+            "methodName": "testCommunitiesLoginController",
+            "name": "CommunitiesLoginControllerTest",
+            "namespace": null,
+            "time": 68
+          },
+          {
+            "id": "01p8Y0000057uxcQAA",
+            "methodName": "testCommunitiesLandingController",
+            "name": "CommunitiesLandingControllerTest",
+            "namespace": null,
+            "time": 70
+          },
+          {
+            "id": "01p8C0000006Ji2QAE",
+            "methodName": "createFileFailsWhenIncorrectBase64Data",
+            "name": "FileUtilitiesTest",
+            "namespace": null,
+            "time": 255
+          },
+          {
+            "id": "01p8C0000006Ji2QAE",
+            "methodName": "createFileFailsWhenIncorrectFilename",
+            "name": "FileUtilitiesTest",
+            "namespace": null,
+            "time": 184
+          },
+          {
+            "id": "01p8C0000006Ji4QAE",
+            "methodName": "errorResponse",
+            "name": "GeocodingServiceTest",
+            "namespace": null,
+            "time": 75
+          },
+          {
+            "id": "01p8C0000006Ji4QAE",
+            "methodName": "blankAddress",
+            "name": "GeocodingServiceTest",
+            "namespace": null,
+            "time": 76
+          },
+          {
+            "id": "01p8Y0000057v0mQAA",
+            "methodName": "testForgotPasswordController",
+            "name": "ForgotPasswordControllerTest",
+            "namespace": null,
+            "time": 76
+          },
+          {
+            "id": "01p8C0000006Ji2QAE",
+            "methodName": "createFileSucceedsWhenCorrectInput",
+            "name": "FileUtilitiesTest",
+            "namespace": null,
+            "time": 427
+          },
+          {
+            "id": "01p8C0000006Ji2QAE",
+            "methodName": "createFileFailsWhenIncorrectRecordId",
+            "name": "FileUtilitiesTest",
+            "namespace": null,
+            "time": 456
+          },
+          {
+            "id": "01p8C0000006Ji4QAE",
+            "methodName": "successResponse",
+            "name": "GeocodingServiceTest",
+            "namespace": null,
+            "time": 83
+          },
+          {
+            "id": "01p8Y0000057v0nQAA",
+            "methodName": "LightningForgotPasswordControllerInstantiation",
+            "name": "LightningForgotPasswordControllerTest",
+            "namespace": null,
+            "time": 71
+          },
+          {
+            "id": "01p8Y0000057v0nQAA",
+            "methodName": "testLightningForgotPasswordControllerInvalidUserName",
+            "name": "LightningForgotPasswordControllerTest",
+            "namespace": null,
+            "time": 77
+          },
+          {
+            "id": "01p8Y0000057v0nQAA",
+            "methodName": "testLightningForgotPasswordControllerWithNullCheckEmailRef",
+            "name": "LightningForgotPasswordControllerTest",
+            "namespace": null,
+            "time": 72
+          },
+          {
+            "id": "01p8Y0000057v0oQAA",
+            "methodName": "LightningLoginFormControllerInstantiation",
+            "name": "LightningLoginFormControllerTest",
+            "namespace": null,
+            "time": 71
+          },
+          {
+            "id": "01p8Y0000057v0oQAA",
+            "methodName": "testAuthConfig",
+            "name": "LightningLoginFormControllerTest",
+            "namespace": null,
+            "time": 83
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testGetNullExtraFields",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 76
+          },
+          {
+            "id": "01p8Y0000057v0oQAA",
+            "methodName": "testIsSelfRegistrationEnabled",
+            "name": "LightningLoginFormControllerTest",
+            "namespace": null,
+            "time": 74
+          },
+          {
+            "id": "01p8Y0000057v0oQAA",
+            "methodName": "testIsUsernamePasswordEnabled",
+            "name": "LightningLoginFormControllerTest",
+            "namespace": null,
+            "time": 79
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "LightningSelfRegisterControllerInstantiation",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 82
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testGetExtraFieldsInSelfRegistration",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 84
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testGetNonEmptyExtraFields",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 79
+          },
+          {
+            "id": "01p8Y0000057v0oQAA",
+            "methodName": "testGetSelfRegistrationURL",
+            "name": "LightningLoginFormControllerTest",
+            "namespace": null,
+            "time": 80
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testIsValidPassword",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 74
+          },
+          {
+            "id": "01p8Y0000057v0tQAA",
+            "methodName": "testMicrobatchSelfRegController",
+            "name": "MicrobatchSelfRegControllerTest",
+            "namespace": null,
+            "time": 74
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testSiteAsContainerEnabled",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 82
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testSelfRegistration",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 74
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testSelfRegisterWithProperCredentials",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 76
+          },
+          {
+            "id": "01p8Y0000057v0pQAA",
+            "methodName": "testSelfRegisterWithCreatedAccount",
+            "name": "LightningSelfRegisterControllerTest",
+            "namespace": null,
+            "time": 312
+          },
+          {
+            "id": "01p8Y0000057v4QQAQ",
+            "methodName": "testRegistration",
+            "name": "SiteRegisterControllerTest",
+            "namespace": null,
+            "time": 80
+          },
+          {
+            "id": "01p8Y0000057v4PQAQ",
+            "methodName": "testSiteLoginController",
+            "name": "SiteLoginControllerTest",
+            "namespace": null,
+            "time": 76
+          },
+          {
+            "id": "01p8Y0000057v0uQAA",
+            "methodName": "testSave",
+            "name": "MyProfilePageControllerTest",
+            "namespace": null,
+            "time": 682
+          },
+          {
+            "id": "01p8C0000006Ji8QAE",
+            "methodName": "testGetPagedPropertyList",
+            "name": "TestPropertyController",
+            "namespace": null,
+            "time": 1445
+          },
+          {
+            "id": "01p8C0000006Ji8QAE",
+            "methodName": "testGetPicturesNoResults",
+            "name": "TestPropertyController",
+            "namespace": null,
+            "time": 141
+          },
+          {
+            "id": "01p8C0000006Ji8QAE",
+            "methodName": "testGetPicturesWithResults",
+            "name": "TestPropertyController",
+            "namespace": null,
+            "time": 504
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testAfterInsert",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 81
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testAfterDelete",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 81
+          },
+          {
+            "id": "01p8C0000006Ji9QAE",
+            "methodName": "importSampleData",
+            "name": "TestSampleDataController",
+            "namespace": null,
+            "time": 433
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testAfterUndelete",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 85
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testBypassAPI",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 82
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testGetHandlerName",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 78
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testBeforeUpdate",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 158
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testAfterUpdate",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 83
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testBeforeDelete",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 83
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testBeforeInsert",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 79
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testLoopCountClass",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 80
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testNonTriggerContext",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 75
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testLoopCount",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 80
+          },
+          {
+            "id": "01p8Y000006WsvJQAS",
+            "methodName": "testVirtualMethods",
+            "name": "TriggerHandlerTest",
+            "namespace": null,
+            "time": 79
+          }
+        ],
+        "totalTime": 8375,
+        "codeCoverageWarnings": [],
+        "failures": [],
+        "flowCoverage": [],
+        "flowCoverageWarnings": []
+      },
+      "componentFailures": []
+    },
+    "done": true,
+    "id": "0Af8C00000Ta1y5SAB",
+    "ignoreWarnings": true,
+    "lastModifiedDate": "2024-02-13T03:39:41.000Z",
+    "numberComponentErrors": 0,
+    "numberComponentsDeployed": 91,
+    "numberComponentsTotal": 91,
+    "numberTestErrors": 0,
+    "numberTestsCompleted": 51,
+    "numberTestsTotal": 51,
+    "rollbackOnError": true,
+    "runTestsEnabled": true,
+    "startDate": "2024-02-13T03:39:10.000Z",
+    "status": "Succeeded",
+    "success": true
+  },
+  "warnings": []
+}
