@@ -1608,12 +1608,12 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@salesforce/cli-plugins-testkit@^5.1.7":
-  version "5.1.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/cli-plugins-testkit/-/cli-plugins-testkit-5.1.7.tgz#79c21424fa7775c9b3220ee566cf4a467154478e"
-  integrity sha512-ZItoRNujnYN5andRLsTjVXp82W114d9TceWEbOOB2CrUofFdqiSbyiKxfg2/VkB2zk1t3B/ueVkFbiQtoLowPA==
+"@salesforce/cli-plugins-testkit@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/cli-plugins-testkit/-/cli-plugins-testkit-5.1.9.tgz#c21b0d282c0d309141ca5e2fe47835530a24621d"
+  integrity sha512-8a9dwYdo2tXhVMrDe4ex8tjMYGuIwT9wlltB4+h3gt/IuowazjQGy5VWam08gsm3UT/FhhjZBdN0aKJPbD4wXA==
   dependencies:
-    "@salesforce/core" "^6.4.7"
+    "@salesforce/core" "^6.5.3"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/ts-types" "^2.0.9"
     "@types/shelljs" "^0.8.15"
@@ -1623,34 +1623,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.0"
 
-"@salesforce/core@^6.4.7":
-  version "6.4.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.4.7.tgz#f15538380aa5c75de697d3c95a2ddbdabae69dbb"
-  integrity sha512-gebjw2xC8Z0gqS3lYRQWz7J+PuGZtybotrnnaJbnzzxdfpBFIp6PjW4nt/235BQW9UWFTLaQh+AwkFgmMTTSkA==
-  dependencies:
-    "@salesforce/kit" "^3.0.15"
-    "@salesforce/schemas" "^1.6.1"
-    "@salesforce/ts-types" "^2.0.9"
-    "@types/semver" "^7.5.6"
-    ajv "^8.12.0"
-    change-case "^4.1.2"
-    faye "^1.4.0"
-    form-data "^4.0.0"
-    js2xmlparser "^4.0.1"
-    jsforce "^2.0.0-beta.29"
-    jsonwebtoken "9.0.2"
-    jszip "3.10.1"
-    pino "^8.17.2"
-    pino-abstract-transport "^1.1.0"
-    pino-pretty "^10.3.1"
-    proper-lockfile "^4.1.2"
-    semver "^7.5.4"
-    ts-retry-promise "^0.7.1"
-
-"@salesforce/core@^6.5.5":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.5.6.tgz#d32f6c89902298c7bbff010821a8856ecb2bb2dc"
-  integrity sha512-ycUvOQi5MYVbDcdYgQ+99ym0FxrSo3c//2IHNkEYX0XdaTapN/63WKZ8hQufKYyucGnGZsPEhVWvrOR6oUV8qQ==
+"@salesforce/core@^6.4.7", "@salesforce/core@^6.5.3", "@salesforce/core@^6.5.5":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.7.0.tgz#f838f5704aa2f14296fd85691c9bcd8da33dca5d"
+  integrity sha512-KIyoSdQJVwtReSpXfpFZ4D4BXHFh5xcmvY6UJjzxB3H7CqUtC/20ldal/jCD8JEy/jObfG7GyxZmZYZYF88JCw==
   dependencies:
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
@@ -2548,7 +2524,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/semver@^7.5.0", "@types/semver@^7.5.6":
+"@types/semver@^7.5.0":
   version "7.5.6"
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.6.tgz#c65b2bfce1bec346582c07724e3f8c1017a20339"
   integrity sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==
@@ -7575,23 +7551,6 @@ pino-std-serializers@^6.0.0:
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz#d9a9b5f2b9a402486a5fc4db0a737570a860aab3"
   integrity sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==
-
-pino@^8.17.2:
-  version "8.17.2"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-8.17.2.tgz#0ed20175623a69d31664a1e8a5f85476272224be"
-  integrity sha512-LA6qKgeDMLr2ux2y/YiUt47EfgQ+S9LznBWOJdN3q1dx2sv0ziDLUBeVpyVv17TEcGCBuWf0zNtg3M5m1NhhWQ==
-  dependencies:
-    atomic-sleep "^1.0.0"
-    fast-redact "^3.1.1"
-    on-exit-leak-free "^2.1.0"
-    pino-abstract-transport v1.1.0
-    pino-std-serializers "^6.0.0"
-    process-warning "^3.0.0"
-    quick-format-unescaped "^4.0.3"
-    real-require "^0.2.0"
-    safe-stable-stringify "^2.3.1"
-    sonic-boom "^3.7.0"
-    thread-stream "^2.0.0"
 
 pino@^8.19.0:
   version "8.19.0"
