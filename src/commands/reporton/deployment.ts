@@ -1,7 +1,6 @@
 import { SfCommand, Flags, Progress } from '@salesforce/sf-plugins-core';
 import { Messages, Connection } from '@salesforce/core';
 import { DeployResult } from 'jsforce/api/metadata';
-// import * as cliProgress from 'cli-progress';
 import Table from 'cli-table3';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);

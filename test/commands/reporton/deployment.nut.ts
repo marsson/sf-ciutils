@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import { ReportonDeploymentResult } from '../../../src/commands/reporton/deployment.js';
 
 let testSession: TestSession;
-
 const testUsername = 'user@my.test';
 
 describe('Report on deploymet nuts', () => {

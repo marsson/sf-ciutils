@@ -111,35 +111,32 @@ sf plugins
 
 <!-- commands -->
 
-- [`sf hello world`](#sf-hello-world)
+- [`sf reporton deployment`](#sf-reporton-deployment)
 
-## `sf hello world`
+## `sf reporton deployment`
 
-Say hello either to the world or someone you know.
+Summary of a command.
 
 ```
 USAGE
-  $ sf hello world [--json] [-n <value>]
+  $ sf reporton deployment -o <value> -d <value> [--json] [-a]
 
 FLAGS
-  -n, --name=<value>  [default: World] The name of the person you'd like to say hello to.
+  -a, --awaitcompletion       If the aplication should respond every 30 sec until the deployment is complete.
+  -d, --deploymentid=<value>  (required) The id of the deployment that we want to report on.
+  -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
+                              configuration variable is already set.
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Say hello either to the world or someone you know.
+  Summary of a command.
 
-  Say hello either to the world or someone you know.
+  More information about a command. Don't repeat the summary.
 
 EXAMPLES
-  Say hello to the world:
-
-    $ sf hello world
-
-  Say hello to someone you know:
-
-    $ sf hello world --name Astro
+  $ sf reporton deployment
 ```
 
 <!-- commandsstop -->

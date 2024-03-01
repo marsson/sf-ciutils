@@ -1,66 +1,74 @@
-import { TestContext } from '@salesforce/core/lib/testSetup.js';
-import { expect } from 'chai';
-import { AuthInfo } from '@salesforce/core';
+// import { join } from 'node:path';
 import { stubMethod } from '@salesforce/ts-sinon';
-import { stubSfCommandUx } from '@salesforce/sf-plugins-core';
-import ReportonDeployment from '../../../src/commands/reporton/deployment.js';
+// import { Config } from '@oclif/core';
+import { Messages, ConfigFile } from '@salesforce/core';
+// import { Ux } from '@salesforce/sf-plugins-core';
+import { execCmd } from '@salesforce/cli-plugins-testkit';
+// import { ensureJsonMap, ensureString, AnyJson } from '@salesforce/ts-types';
+// import { isString } from '@salesforce/ts-types';
+// import { MetadataApiDeploy } from '@salesforce/source-deploy-retrieve';
+import { expect } from 'chai';
+import { TestContext, MockTestOrgData } from '@salesforce/core/lib/testSetup.js';
+import ReportonDeploymentResult from '../../../src/commands/reporton/deployment.js';
+// import { DeployResult } from '@salesforce/source-deploy-retrieve';
+// import ReportOnDeployment, {ReportonDeploymentResult} from '../../../src/commands/reporton/deployment.js'
+// import { getDeployResult } from './deployResponses.js';
 
-describe('reporton deployment', () => {
+// const sObjectId = '0011100001zhhyUAAQ';
+Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
+// const messages = Messages.loadMessages('ciutils', 'reporton.deployment');
+
+describe('reporton:deployment', () => {
   const $$ = new TestContext();
-  let sfCommandStubs: ReturnType<typeof stubSfCommandUx>;
+  const testOrg = new MockTestOrgData();
+  const sandbox = $$.SANDBOX;
+  testOrg.username = 'test@org.com';
+  testOrg.loginUrl = 'https://test.salesforce.com';
+  testOrg.instanceUrl = 'https://test.my.sf.com';
+  // const defaultDir = join('my', 'default', 'package');
+  const stashedDeployId = 'IMA000STASHID';
 
-  beforeEach(() => {
-    sfCommandStubs = stubSfCommandUx($$.SANDBOX);
+  // const deployResult: DeployResult = getDeployResult('successSync');
+  // const expectedResults: DeployCommandResult = deployResult.response as DeployCommandResult;
+  // expectedResults.deployedSource = deployResult.getFileResponses();
+  // expectedResults.outboundFiles = [];
+  // expectedResults.deploys = [deployResult.response];
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
-    stubMethod($$.SANDBOX, AuthInfo, 'listAllAuthorizations').resolves([
-      'Jimi Hendrix',
-      'SRV',
-      'shenderson',
-      'SRV',
-      'foo@example.com',
-    ]);
+  // Stubs
+  //  const oclifConfigStub: Config = fromStub(stubInterface<Config>(sandbox));
+  // let checkDeployStatusStub: sinon.SinonStub;
+
+  // let uxLogStub: sinon.SinonStub;
+  // let pollStatusStub: sinon.SinonStub;
+
+  // const runReportCmd = async (params: string[], result?: MetadataApiDeployStatus) => {
+  //  const cmd = new ReportOnDeployment(params, oclifConfigStub);
+
+  // uxLogStub = stubMethod(sandbox, Ux.prototype, 'log');
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  stubMethod(sandbox, ConfigFile.prototype, 'get').returns({ jobid: stashedDeployId });
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+  // checkDeployStatusStub = sandbox.stub(cmd, 'report').resolves({ response: result ?? expectedResults });
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-return
+  // return cmd.runIt();
+  // };
+
+  beforeEach(async () => {
+    await $$.stubAuths(testOrg);
+    await $$.stubConfig({ 'target-org': testOrg.username });
+
+    //  pollStatusStub = sandbox.stub(MetadataApiDeploy.prototype, 'pollStatus');
   });
 
-  describe('hub org defined', () => {
-    beforeEach(() => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
-      stubMethod($$.SANDBOX, {}, 'readLocallyValidatedMetaConfigsGroupedByOrgType')
-        .resolves
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        ();
-    });
+  afterEach(() => {
+    $$.restore();
+    sandbox.restore();
+  });
 
-    it('runs repoorton deployment', async () => {
-      // await $$.stubAuths(testOrg);
-
-      await ReportonDeployment.run(['-o', 'foo@example.com', '-d', '0Af8C00000Ta1y5SAB', '-a']);
-      const output = sfCommandStubs.log
-        .getCalls()
-        .flatMap((c) => c.args)
-        .join('\n');
-      expect(output).to.include(
-        'NoDefaultEnvError: No default environment found. Use -o or --target-org to specify an environment.'
-      );
-    });
-
-    // it('runs hello world with --json and no provided name', async () => {
-    //   const result = await World.run([]);
-    //   expect(result.name).to.equal('World');
-    // });
-
-    // it('runs hello world --name Astro', async () => {
-    //  await World.run(['--name', 'Astro']);
-    //  const output = sfCommandStubs.log
-    //   .getCalls()
-    //   .flatMap((c) => c.args)
-    //   .join('\n');
-    // expect(output).to.include('Hello Astro');
-    // });
-
-    // it('runs hello world --name Astro --json', async () => {
-    //  const result = await World.run(['--name', 'Astro', '--json']);
-    //  expect(result.name).to.equal('Astro');
-    // });
+  it('No Default Environment', () => {
+    const result = execCmd<ReportonDeploymentResult>('reporton:deployment', { ensureExitCode: 1 });
+    expect(result.shellOutput.stderr).to.contain('No default environment found');
   });
 });
