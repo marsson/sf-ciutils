@@ -40,26 +40,26 @@ jobs:
 
   # Define any subsequent jobs here, such as building, testing, or publishing your package.
   # For example, a simplified npm publish job could look like this:
-  publish-npm:
-    needs: auto-tag
-    runs-on: ubuntu-latest
-    if: needs.auto-tag.outputs.EXISTS == 'no' # Only run this job if a new tag was created.
-    steps:
-      - uses: actions/checkout@v3
+  # publish-npm:
+  #  needs: auto-tag
+  #  runs-on: ubuntu-latest
+  #  if: needs.auto-tag.outputs.EXISTS == 'no' # Only run this job if a new tag was created.
+  #  steps:
+  #    - uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # Specify the Node.js version
-          registry-url: 'https://registry.npmjs.org/'
+  #   - name: Set up Node.js
+  #    uses: actions/setup-node@v2
+  #     with:
+  #       node-version: '14' # Specify the Node.js version
+  #       registry-url: 'https://registry.npmjs.org/'
 
-      - name: Install Dependencies
-        run: npm install
+  #  - name: Install Dependencies
+  #    run: npm install
 
-      - name: Build
-        run: npm run build # Run your build script, adjust if necessary
+  #  - name: Build
+  #    run: npm run build # Run your build script, adjust if necessary
 
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Ensure you have an NPM_TOKEN secret set in your repository
+  #   - name: Publish to npm
+  #     run: npm publish
+  #     env:
+  #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Ensure you have an NPM_TOKEN secret set in your repository
