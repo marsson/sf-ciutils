@@ -33,10 +33,10 @@ jobs:
       - name: Create tag
         if: steps.check_tag.outputs.EXISTS == 'no'
         run: |
-          git config --local user.email "action@github.com"
+          git config --local user.email "marsson@gmail.com"
           git config --local user.name "GitHub Action"
           git tag -a "v${{ steps.package_version.outputs.VERSION }}" -m "Release v${{ steps.package_version.outputs.VERSION }}"
-          git push origin "v${{ steps.package_version.outputs.VERSION }}"
+          git push https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/marsson/sf-ciutils.git "v${{ steps.package_version.outputs.VERSION }}"
 
   # Define any subsequent jobs here, such as building, testing, or publishing your package.
   # For example, a simplified npm publish job could look like this:
