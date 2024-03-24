@@ -4,7 +4,7 @@ import { DeployResult } from 'jsforce/api/metadata';
 import Table from 'cli-table3';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
-const messages = Messages.loadMessages('ciutils', 'reporton.deployment');
+const messages = Messages.loadMessages('@marsson/ciutils', 'reporton.deployment');
 
 export type ReportonDeploymentResult = DeployResult;
 export default class ReportonDeployment extends SfCommand<ReportonDeploymentResult> {
@@ -73,7 +73,11 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
   /* eslint-enable no-await-in-loop */
 
   private async updateDeployResult(deploymentid: string): Promise<void> {
-    this.deploymentStatus = await this.connection!.metadata.checkDeployStatus(deploymentid, true);
+    try {
+      this.deploymentStatus = await this.connection!.metadata.checkDeployStatus(deploymentid, true);
+    } catch (e) {
+      throw new Error('Invalid ID or expired deployment');
+    }
     this.isComplete = this.deploymentStatus.status === 'Succeeded' || this.deploymentStatus.status === 'Failed';
   }
   private updateProgressBars(): void {

@@ -1,0 +1,11 @@
+{
+  "code": 1,
+  "context": "ReportonDeployment",
+  "commandName": "ReportonDeployment",
+  "message": "INVALID_CROSS_REFERENCE_KEY: invalid cross reference id",
+  "name": "sf:INVALID_CROSS_REFERENCE_KEY",
+  "status": 1,
+  "stack": "sf:INVALID_CROSS_REFERENCE_KEY: INVALID_CROSS_REFERENCE_KEY: invalid cross reference id\n    at SOAP.getError (/Users/marcelo.cost/Projects/ciutils/node_modules/jsforce/src/http-api.ts:288:12)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/marcelo.cost/Projects/ciutils/node_modules/jsforce/src/http-api.ts:132:23\n    at async SOAP.invoke (/Users/marcelo.cost/Projects/ciutils/node_modules/jsforce/src/soap.ts:221:17)\n    at async MetadataApi._invoke (/Users/marcelo.cost/Projects/ciutils/node_modules/jsforce/src/api/metadata.ts:116:17)\n    at async ReportonDeployment.updateDeployResult (file:///Users/marcelo.cost/Projects/ciutils/src/commands/reporton/deployment.ts:64:33)\n    at async ReportonDeployment.run (file:///Users/marcelo.cost/Projects/ciutils/src/commands/reporton/deployment.ts:34:9)\n    at async ReportonDeployment._run (/Users/marcelo.cost/Projects/ciutils/node_modules/@oclif/core/lib/command.js:311:22)\n    at async Config.runCommand (/Users/marcelo.cost/Projects/ciutils/node_modules/@oclif/core/lib/config/config.js:433:25)\n    at async run (/Users/marcelo.cost/Projects/ciutils/node_modules/@oclif/core/lib/main.js:92:16)",
+  "exitCode": 1,
+  "warnings": []
+}
