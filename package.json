@@ -1,7 +1,7 @@
 {
   "name": "@marsson/ciutils",
   "description": " Utilities for enabling continuous integration for Salesforce development under SF CLI",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "dependencies": {
     "@oclif/core": "^3.18.1",
     "@salesforce/core": "^6.4.7",
