@@ -1,7 +1,8 @@
-import { SfCommand, Flags, Progress } from '@salesforce/sf-plugins-core';
+import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
 import { Messages, Connection } from '@salesforce/core';
 import { DeployResult } from 'jsforce/api/metadata';
 import Table from 'cli-table3';
+import { MultiBar } from 'cli-progress';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
 const messages = Messages.loadMessages('@marsson/ciutils', 'reporton.deployment');
@@ -28,8 +29,15 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
   };
   private connection: Connection | undefined;
   private deploymentStatus!: DeployResult;
-  private progressBar: Progress = new Progress(true);
-  private isRunningTest: boolean = false;
+  private multiBar: MultiBar = new MultiBar({
+    format: 'Deployment Progress | {bar} | {percentage}% || {value}/{total} {filename}}',
+    barCompleteChar: '\u2588',
+    barIncompleteChar: '\u2591',
+    hideCursor: true,
+    noTTYOutput: true,
+    notTTYSchedule: 10000,
+    emptyOnZero: true,
+  });
   private isComplete: boolean = false;
 
   public async run(): Promise<ReportonDeploymentResult> {
@@ -39,7 +47,6 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     this.displayHeader(deploymentId);
     await this.updateDeployResult(deploymentId);
     // Correctly initializing the progress bars with the total expected count
-    this.progressBar.start(this.deploymentStatus.numberComponentsTotal);
     // Updating the progress bars with the current progress
 
     if (flags.awaitcompletion) {
@@ -66,9 +73,6 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
         await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait for 5 seconds
       }
     } while (!this.isComplete);
-
-    // Ensure progress bars are properly concluded outside the loop
-    this.progressBar.finish();
   }
   /* eslint-enable no-await-in-loop */
 
@@ -82,39 +86,20 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
   }
   private updateProgressBars(): void {
     // Ensure progress bars are updated only if deploymentStatus has been fetched
-
-    if (
-      this.deploymentStatus.numberComponentsDeployed <= this.deploymentStatus.numberComponentsTotal &&
-      this.isRunningTest === false
-    ) {
-      this.progressBar.update(this.deploymentStatus.numberComponentsDeployed);
-      if (this.deploymentStatus.numberComponentsDeployed === this.deploymentStatus.numberComponentsDeployed) {
-        this.isRunningTest = true;
-        this.progressBar.finish();
-        this.progressBar = new Progress(true);
-        this.progressBar.start(
-          this.deploymentStatus.numberTestsTotal,
-          {},
-          {
-            title: 'PROGRESS',
-            format: '%s | {bar} | {value}/{total} Test Methods',
-            barCompleteChar: '\u2588',
-            barIncompleteChar: '\u2591',
-            linewrap: true,
-          }
-        );
-
-        this.progressBar.update(this.deploymentStatus.numberTestsCompleted);
-        if (this.deploymentStatus.numberTestsCompleted === this.deploymentStatus.numberTestsTotal) {
-          this.progressBar.finish();
-        }
-      }
-    } else {
-      this.progressBar.update(this.deploymentStatus.numberTestsCompleted);
-      if (this.deploymentStatus.numberTestsCompleted === this.deploymentStatus.numberTestsTotal) {
-        this.progressBar.finish();
-      }
-    }
+    const b1 = this.multiBar.create(
+      this.deploymentStatus.numberComponentsTotal,
+      this.deploymentStatus.numberComponentsDeployed + this.deploymentStatus.numberComponentErrors,
+      { filename: 'Components' }
+    );
+    const b2 = this.multiBar.create(
+      this.deploymentStatus.numberTestsTotal,
+      this.deploymentStatus.numberTestsCompleted + this.deploymentStatus.numberTestErrors,
+      { filename: 'Test Methods' }
+    );
+    b1.setTotal(this.deploymentStatus.numberComponentsTotal);
+    b2.setTotal(this.deploymentStatus.numberTestsTotal);
+    b1.update(this.deploymentStatus.numberComponentsDeployed + this.deploymentStatus.numberComponentErrors);
+    b2.update(this.deploymentStatus.numberTestsCompleted + this.deploymentStatus.numberTestErrors);
   }
 
   // Example helper function that needs to use UX methods
