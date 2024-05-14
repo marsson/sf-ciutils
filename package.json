@@ -58,6 +58,9 @@
       },
       "reporton": {
         "description": "description for reporton"
+      },
+      "remove": {
+        "description": "description for remove"
       }
     },
     "flexibleTaxonomy": true
