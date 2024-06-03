@@ -35,9 +35,11 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     barIncompleteChar: '\u2591',
     hideCursor: true,
     noTTYOutput: true,
-    notTTYSchedule: 10000,
+    notTTYSchedule: 5000,
     emptyOnZero: true,
   });
+  private b1 = this.multiBar.create(0, 0, { filename: 'Components' });
+  private b2 = this.multiBar.create(0, 0, { filename: 'Test Methods' });
   private isComplete: boolean = false;
 
   public async run(): Promise<ReportonDeploymentResult> {
@@ -57,7 +59,6 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     }
 
     this.printDeploymentReport();
-
     return this.deploymentStatus;
   }
 
@@ -82,24 +83,18 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     } catch (e) {
       throw new Error('Invalid ID or expired deployment');
     }
-    this.isComplete = this.deploymentStatus.status === 'Succeeded' || this.deploymentStatus.status === 'Failed';
+    this.isComplete =
+      this.deploymentStatus.status === 'Succeeded' ||
+      this.deploymentStatus.status === 'Failed' ||
+      this.deploymentStatus.status === 'Canceled';
   }
   private updateProgressBars(): void {
     // Ensure progress bars are updated only if deploymentStatus has been fetched
-    const b1 = this.multiBar.create(
-      this.deploymentStatus.numberComponentsTotal,
-      this.deploymentStatus.numberComponentsDeployed + this.deploymentStatus.numberComponentErrors,
-      { filename: 'Components' }
-    );
-    const b2 = this.multiBar.create(
-      this.deploymentStatus.numberTestsTotal,
-      this.deploymentStatus.numberTestsCompleted + this.deploymentStatus.numberTestErrors,
-      { filename: 'Test Methods' }
-    );
-    b1.setTotal(this.deploymentStatus.numberComponentsTotal);
-    b2.setTotal(this.deploymentStatus.numberTestsTotal);
-    b1.update(this.deploymentStatus.numberComponentsDeployed + this.deploymentStatus.numberComponentErrors);
-    b2.update(this.deploymentStatus.numberTestsCompleted + this.deploymentStatus.numberTestErrors);
+
+    this.b1.setTotal(this.deploymentStatus.numberComponentsTotal);
+    this.b2.setTotal(this.deploymentStatus.numberTestsTotal);
+    this.b1.update(this.deploymentStatus.numberComponentsDeployed + this.deploymentStatus.numberComponentErrors);
+    this.b2.update(this.deploymentStatus.numberTestsCompleted + this.deploymentStatus.numberTestErrors);
   }
 
   // Example helper function that needs to use UX methods
@@ -110,7 +105,7 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
 
   private printDeploymentReport(): void {
     const result = this.deploymentStatus.status;
-    if (result === 'Failed') {
+    if (result === 'Failed' || result === 'Canceled') {
       this.printErrors();
       process.exit(1);
     }
@@ -141,9 +136,7 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
       ]);
       t1.push(...errorMap);
       this.log(t1.toString());
-    }
-
-    if (result.details.runTestResult?.failures && result.details.runTestResult?.failures.length > 0) {
+    } else if (result.details.runTestResult?.failures && result.details.runTestResult?.failures.length > 0) {
       this.log(
         '\n\n\n=========================================================================================================='
       );
@@ -160,6 +153,14 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
       const errorMap = testErrors.map((testError) => [testError.name, testError.methodName, testError.message]);
       t1.push(...errorMap);
       this.log(t1.toString());
+    } else {
+      this.log(
+        '\n\n=========================================================================================================='
+      );
+      this.log('Cancelled: The deployment was cancelled');
+      this.log(
+        '=========================================================================================================='
+      );
     }
   }
   private printSuccess(): void {
