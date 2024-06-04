@@ -110,6 +110,7 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
       process.exit(1);
     }
     this.printSuccess();
+    process.exit(0);
   }
   private printErrors(): void {
     const result: DeployResult = this.deploymentStatus;
