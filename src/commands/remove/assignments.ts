@@ -187,7 +187,7 @@ export default class RemoveAssignments extends SfCommand<RemoveAssignmentsResult
       );
       this.log('FAILURE LIST:');
       for (const failed of failure) {
-        this.log(`${failed.username}, failed with error: ${failed.error}`);
+        this.log(`${!failed.username}, failed with error: ${!failed.error}`);
       }
       this.log(
         '=========================================================================================================='
