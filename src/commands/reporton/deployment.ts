@@ -1,7 +1,8 @@
-import { SfCommand, Flags, Progress } from '@salesforce/sf-plugins-core';
+import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
 import { Messages, Connection } from '@salesforce/core';
 import { DeployResult } from 'jsforce/api/metadata';
 import Table from 'cli-table3';
+import { MultiBar } from 'cli-progress';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
 const messages = Messages.loadMessages('@marsson/ciutils', 'reporton.deployment');
@@ -28,8 +29,17 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
   };
   private connection: Connection | undefined;
   private deploymentStatus!: DeployResult;
-  private progressBar: Progress = new Progress(true);
-  private isRunningTest: boolean = false;
+  private multiBar: MultiBar = new MultiBar({
+    format: 'Deployment Progress | {bar} | {percentage}% || {value}/{total} {filename}}',
+    barCompleteChar: '\u2588',
+    barIncompleteChar: '\u2591',
+    hideCursor: true,
+    noTTYOutput: true,
+    notTTYSchedule: 5000,
+    emptyOnZero: true,
+  });
+  private b1 = this.multiBar.create(0, 0, { filename: 'Components' });
+  private b2 = this.multiBar.create(0, 0, { filename: 'Test Methods' });
   private isComplete: boolean = false;
 
   public async run(): Promise<ReportonDeploymentResult> {
@@ -39,7 +49,6 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     this.displayHeader(deploymentId);
     await this.updateDeployResult(deploymentId);
     // Correctly initializing the progress bars with the total expected count
-    this.progressBar.start(this.deploymentStatus.numberComponentsTotal);
     // Updating the progress bars with the current progress
 
     if (flags.awaitcompletion) {
@@ -50,7 +59,6 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     }
 
     this.printDeploymentReport();
-
     return this.deploymentStatus;
   }
 
@@ -66,9 +74,6 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
         await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait for 5 seconds
       }
     } while (!this.isComplete);
-
-    // Ensure progress bars are properly concluded outside the loop
-    this.progressBar.finish();
   }
   /* eslint-enable no-await-in-loop */
 
@@ -78,43 +83,18 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
     } catch (e) {
       throw new Error('Invalid ID or expired deployment');
     }
-    this.isComplete = this.deploymentStatus.status === 'Succeeded' || this.deploymentStatus.status === 'Failed';
+    this.isComplete =
+      this.deploymentStatus.status === 'Succeeded' ||
+      this.deploymentStatus.status === 'Failed' ||
+      this.deploymentStatus.status === 'Canceled';
   }
   private updateProgressBars(): void {
     // Ensure progress bars are updated only if deploymentStatus has been fetched
 
-    if (
-      this.deploymentStatus.numberComponentsDeployed <= this.deploymentStatus.numberComponentsTotal &&
-      this.isRunningTest === false
-    ) {
-      this.progressBar.update(this.deploymentStatus.numberComponentsDeployed);
-      if (this.deploymentStatus.numberComponentsDeployed === this.deploymentStatus.numberComponentsDeployed) {
-        this.isRunningTest = true;
-        this.progressBar.finish();
-        this.progressBar = new Progress(true);
-        this.progressBar.start(
-          this.deploymentStatus.numberTestsTotal,
-          {},
-          {
-            title: 'PROGRESS',
-            format: '%s | {bar} | {value}/{total} Test Methods',
-            barCompleteChar: '\u2588',
-            barIncompleteChar: '\u2591',
-            linewrap: true,
-          }
-        );
-
-        this.progressBar.update(this.deploymentStatus.numberTestsCompleted);
-        if (this.deploymentStatus.numberTestsCompleted === this.deploymentStatus.numberTestsTotal) {
-          this.progressBar.finish();
-        }
-      }
-    } else {
-      this.progressBar.update(this.deploymentStatus.numberTestsCompleted);
-      if (this.deploymentStatus.numberTestsCompleted === this.deploymentStatus.numberTestsTotal) {
-        this.progressBar.finish();
-      }
-    }
+    this.b1.setTotal(this.deploymentStatus.numberComponentsTotal);
+    this.b2.setTotal(this.deploymentStatus.numberTestsTotal);
+    this.b1.update(this.deploymentStatus.numberComponentsDeployed + this.deploymentStatus.numberComponentErrors);
+    this.b2.update(this.deploymentStatus.numberTestsCompleted + this.deploymentStatus.numberTestErrors);
   }
 
   // Example helper function that needs to use UX methods
@@ -125,11 +105,12 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
 
   private printDeploymentReport(): void {
     const result = this.deploymentStatus.status;
-    if (result === 'Failed') {
+    if (result === 'Failed' || result === 'Canceled') {
       this.printErrors();
       process.exit(1);
     }
     this.printSuccess();
+    process.exit(0);
   }
   private printErrors(): void {
     const result: DeployResult = this.deploymentStatus;
@@ -156,9 +137,7 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
       ]);
       t1.push(...errorMap);
       this.log(t1.toString());
-    }
-
-    if (result.details.runTestResult?.failures && result.details.runTestResult?.failures.length > 0) {
+    } else if (result.details.runTestResult?.failures && result.details.runTestResult?.failures.length > 0) {
       this.log(
         '\n\n\n=========================================================================================================='
       );
@@ -175,6 +154,14 @@ export default class ReportonDeployment extends SfCommand<ReportonDeploymentResu
       const errorMap = testErrors.map((testError) => [testError.name, testError.methodName, testError.message]);
       t1.push(...errorMap);
       this.log(t1.toString());
+    } else {
+      this.log(
+        '\n\n=========================================================================================================='
+      );
+      this.log('Cancelled: The deployment was cancelled');
+      this.log(
+        '=========================================================================================================='
+      );
     }
   }
   private printSuccess(): void {

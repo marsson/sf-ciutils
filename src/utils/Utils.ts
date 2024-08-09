@@ -2,7 +2,7 @@
 
 import { Connection } from '@salesforce/core';
 import { ExecuteAnonymousResult } from 'jsforce/lib/api/tooling.js';
-import { RecordResult, Error } from 'jsforce/record-result.js';
+import { RecordResult } from 'jsforce/record-result.js';
 
 class AssignmentHelper {
   // public static matchUsersToList(orgUsers: object[], selectedUsers: string[]): UserNameOrg[] {
@@ -115,7 +115,10 @@ class UnassignableObject {
 
 class BatchDownloadHelper {
   public static fetchAllUsers(conn: Connection): Promise<SObject[]> {
-    const usersAndPermsetAssignments = this.bulkQuery(conn, 'SELECT Id, Username FROM User');
+    const usersAndPermsetAssignments = this.bulkQuery(conn, {
+      objectName: 'User',
+      query: 'SELECT Id, Username FROM User',
+    });
     return usersAndPermsetAssignments;
     // Use the fetched User IDs to then query for PermissionSetAssignments and GroupMembers using similar Bulk API calls or logic.
   }
@@ -141,7 +144,7 @@ class BatchDownloadHelper {
       query: 'SELECT Id,AssigneeId FROM PermissionSetAssignment WHERE PermissionSetGroupId != NULL',
     });
 
-    const queryPromises = queries.map((q) => this.bulkQuery(conn, q.query));
+    const queryPromises = queries.map((q) => this.bulkQuery(conn, q));
 
     const results = await Promise.all(queryPromises);
     response.users = results[0];
@@ -191,7 +194,7 @@ class BatchDownloadHelper {
     // Handling the async operation with proper event listeners
     return new Promise<RecordResult[]>((resolve, reject) => {
       void batch.on('queue', () => {
-        batch.poll(1000, 60000); // Poll every 1 second, timeout after 1 minute
+        batch.poll(1000, 60_000); // Poll every 1 second, timeout after 1 minute
       });
 
       void batch.on('response', (result) => {
@@ -225,21 +228,25 @@ class BatchDownloadHelper {
     }
   }
 
-  private static async bulkQuery(conn: Connection, query: string): Promise<SObject[]> {
-    return new Promise((resolve, reject) => {
-      const records: object[] = [];
+  private static async bulkQuery(conn: Connection, query: { objectName: string; query: string }): Promise<SObject[]> {
+    const job = conn.bulk.createJob(query.objectName, 'query');
+    const batch = job.createBatch();
+    void batch.execute(query.query);
 
-      conn.bulk
-        .query(query)
-        .on('record', (rec: SObject) => {
-          records.push(rec); // Accumulate records
-        })
-        .on('end', () => {
-          resolve(records as SObject[]); // Resolve the promise with the accumulated records once all have been received
-        })
-        .on('error', (err: Error) => {
-          reject(err); // Reject the promise on error
-        });
+    // Handling the async operation with proper event listeners
+    return new Promise<SObject[]>((resolve, reject) => {
+      void batch.on('queue', () => {
+        batch.poll(1000, 60_000); // Poll every 1 second, timeout after 1 minute
+      });
+
+      void batch.on('response', (result) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        resolve(result);
+      });
+
+      void batch.on('error', (error) => {
+        reject(error);
+      });
     });
   }
 }

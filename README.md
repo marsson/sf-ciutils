@@ -111,4 +111,70 @@ sf plugins
 
 <!-- commands -->
 
+- [`sf remove assignments`](#sf-remove-assignments)
+- [`sf reporton deployment`](#sf-reporton-deployment)
+
+## `sf remove assignments`
+
+Summary of a command.
+
+```
+USAGE
+  $ sf remove assignments -b PermissionSet|PermissionSetGroup|Group -u <value> -o <value> [--json] [--flags-dir <value>]
+    [-n <value>]
+
+FLAGS
+  -b, --object=<option>...    (required) The object for which the assignment will be removed.
+                              <options: PermissionSet|PermissionSetGroup|Group>
+  -n, --name=<value>          Description of a flag.
+  -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
+                              configuration variable is already set.
+  -u, --usernames=<value>...  (required) The list of usernames to be unassigned from the selected object. If in a
+                              sandbox, the script will look for "usename" and "username".sandbox for unassignment.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Summary of a command.
+
+  More information about a command. Don't repeat the summary.
+
+EXAMPLES
+  $ sf remove assignments
+
+FLAG DESCRIPTIONS
+  -n, --name=<value>  Description of a flag.
+
+    More information about a flag. Don't repeat the summary.
+```
+
+## `sf reporton deployment`
+
+Summary of a command.
+
+```
+USAGE
+  $ sf reporton deployment -o <value> -d <value> [--json] [--flags-dir <value>] [-a]
+
+FLAGS
+  -a, --awaitcompletion       If the aplication should respond every 30 sec until the deployment is complete.
+  -d, --deploymentid=<value>  (required) The id of the deployment that we want to report on.
+  -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
+                              configuration variable is already set.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Summary of a command.
+
+  More information about a command. Don't repeat the summary.
+
+EXAMPLES
+  $ sf reporton deployment
+```
+
 <!-- commandsstop -->
