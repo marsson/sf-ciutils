@@ -3,7 +3,12 @@
   "compilerOptions": {
     "outDir": "lib",
     "rootDir": "src",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "strictFunctionTypes": false,
+
+
   },
   "include": ["./src/**/*.ts"]
 }

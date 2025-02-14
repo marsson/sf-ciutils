@@ -2,7 +2,8 @@
 tmp/
 # use yarn by default, so ignore npm
 package-lock.json
-
+force-app/
+sfdx-project.json
 # never checkin npm config
 .npmrc
 

@@ -252,7 +252,7 @@ class BatchDownloadHelper {
 }
 
 // Define the SObject type with a mandatory Id property of type string
-interface SObject {
+type SObject = {
   [key: string]: unknown; // Allow other properties of any type
   Id: string;
 }
