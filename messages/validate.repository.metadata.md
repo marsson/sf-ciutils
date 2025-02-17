@@ -18,3 +18,7 @@ More information about a flag. Don't repeat the summary.
 
 - <%= config.bin %> <%= command.id %>
 
+
+# flags.folder.summary
+
+The path to the deployment folder (ex. force-app/main/default/obects).
