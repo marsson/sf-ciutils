@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
 import { Messages, Connection } from '@salesforce/core';
 import { DeployResult } from 'jsforce/api/metadata';

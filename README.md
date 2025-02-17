@@ -110,9 +110,58 @@ sf plugins
 ## Commands
 
 <!-- commands -->
+* [`sf create file`](#sf-create-file)
+* [`sf remove assignments`](#sf-remove-assignments)
+* [`sf reporton deployment`](#sf-reporton-deployment)
+* [`sf validate repository metadata`](#sf-validate-repository-metadata)
 
-- [`sf remove assignments`](#sf-remove-assignments)
-- [`sf reporton deployment`](#sf-reporton-deployment)
+## `sf create file`
+
+Upload a local file to an org.
+
+```
+USAGE
+  $ sf create file -o <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>] [-t <value>] [-i
+    <value>] [-c <value>]
+
+FLAGS
+  -c, --created-date=<value>  Datetime value in ISO 8601 format (e.g., 2024-08-09T15:30:00Z).
+  -f, --file=<value>          (required) Path of file to upload.
+  -i, --parent-id=<value>     ID of the record to attach the file to.
+  -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
+                              configuration variable is already set.
+  -t, --title=<value>         New title given to the file (ContentDocument) after it's uploaded.
+      --api-version=<value>   Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Upload a local file to an org.
+
+  This command always creates a new file in the org; you can't update an existing file. After a successful upload, the
+  command displays the ID of the new ContentDocument record which represents the uploaded file.
+
+  By default, the uploaded file isn't attached to a record; in the Salesforce UI the file shows up in the Files tab. You
+  can optionally attach the file to an existing record, such as an account, as long as you know its record ID.
+
+  You can also give the file a new name after it's been uploaded; by default its name in the org is the same as the
+  local file name.
+
+EXAMPLES
+  Upload the local file "resources/astro.png" to your default org:
+
+    $ sf create file --file resources/astro.png
+
+  Give the file a different filename after it's uploaded to the org with alias "my-scratch":
+
+    $ sf create file --file resources/astro.png --title AstroOnABoat.png --target-org my-scratch
+
+  Attach the file to a record in the org:
+
+    $ sf create file --file path/to/astro.png --parent-id a03fakeLoJWPIA3
+```
 
 ## `sf remove assignments`
 
@@ -120,8 +169,8 @@ Summary of a command.
 
 ```
 USAGE
-  $ sf remove assignments -b PermissionSet|PermissionSetGroup|Group -u <value> -o <value> [--json] [--flags-dir <value>]
-    [-n <value>]
+  $ sf remove assignments -b PermissionSet|PermissionSetGroup|Group... -u <value>... -o <value> [--json] [--flags-dir
+    <value>] [-n <value>]
 
 FLAGS
   -b, --object=<option>...    (required) The object for which the assignment will be removed.
@@ -177,4 +226,35 @@ EXAMPLES
   $ sf reporton deployment
 ```
 
+## `sf validate repository metadata`
+
+Summary of a command.
+
+```
+USAGE
+  $ sf validate repository metadata -o <value> -f <value> [--json] [--flags-dir <value>] [-n <value>]
+
+FLAGS
+  -f, --folder=<value>      (required) The path to the deployment folder (ex. force-app/main/default/obects).
+  -n, --name=<value>        Description of a flag.
+  -o, --target-org=<value>  (required) Username or alias of the target org. Not required if the `target-org`
+                            configuration variable is already set.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Summary of a command.
+
+  More information about a command. Don't repeat the summary.
+
+EXAMPLES
+  $ sf validate repository metadata
+
+FLAG DESCRIPTIONS
+  -n, --name=<value>  Description of a flag.
+
+    More information about a flag. Don't repeat the summary.
+```
 <!-- commandsstop -->

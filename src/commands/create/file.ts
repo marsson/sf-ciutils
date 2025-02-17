@@ -47,7 +47,7 @@ export default class DataCreateFile extends SfCommand<ContentVersion> {
     // Hacking in CreatedDate
     // Will be optional and will only work if the option in the org to change audit fields is available.
     'created-date': Flags.string({
-      summary: messages.getMessage('flags.parent-id.summary'),
+      summary: messages.getMessage('flags.created-date.summary'),
       char: 'c',
       parse: (input) => {
         // Validate the input to be in ISO 8601 format
