@@ -1,10 +1,12 @@
 /* eslint-disable */
 import {SfCommand, Flags} from '@salesforce/sf-plugins-core';
-import {Messages, Connection} from '@salesforce/core';
+
+import {Messages,Org, Connection} from '@salesforce/core';
 import * as fs from 'fs';
 import * as path from 'path';
 import JSZip from 'jszip';
-import { MetadataResolver } from '@salesforce/source-deploy-retrieve';
+
+import { MetadataResolver,ComponentSet,RetrieveResult, MetadataComponent } from '@salesforce/source-deploy-retrieve';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
 const messages = Messages.loadMessages('@marsson/ciutils', 'validate.repository.metadata');
@@ -99,7 +101,7 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
           if (!component.content) {
             this.debugLog(`[WARN] No content for ${component.type.name} ${component.fullName}, using XML instead: ${component.xml}`);
           }
-          
+
           if (!metadataTypes[typeName]) {
             metadataTypes[typeName] = {};
           }
@@ -120,73 +122,6 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
   }
 
 
-  // Retrieve metadata using JSForce
-  private async retrieveMetadata(metadata: MetadataType ): Promise<any> {
-
-    const metadataTypes = MetadataHelper.getMetadataRequest(metadata);
-    this.debugLog(`Starting retrieveMetadata with ${metadataTypes.length} metadata types`);
-
-    const retrieveRequest = {
-      apiVersion: 58,
-      singlePackage: true,
-      unpackaged: {
-        types: metadataTypes,
-        version: '58.0',
-        objectPermissions: []
-      }
-    };
-
-    this.debugLog(`Retrieve request details: API Version: ${retrieveRequest.apiVersion}, Single Package: ${retrieveRequest.singlePackage}`);
-    this.debugLog(`Types to retrieve: ${metadataTypes.map(t => t.name).join(', ')}`);
-
-    try {
-      // Start the retrieve request
-      this.debugLog(`Initiating metadata retrieve request`);
-      const retrieveResult = await this.connection.metadata.retrieve(retrieveRequest);
-      this.debugLog(`Retrieve request initiated with ID: ${retrieveResult.id}`);
-
-      // Check the status of the retrieve request
-      this.debugLog(`Checking initial retrieve status`);
-      let result = await this.connection.metadata.checkRetrieveStatus(retrieveResult.id);
-      this.debugLog(`Initial status: done=${result.done}, success=${result.success || false}`);
-
-      // Wait for the retrieve to complete
-      let pollCount = 0;
-      while (!result.done) {
-        pollCount++;
-        // Wait for 10 seconds before checking again
-        await new Promise(resolve => setTimeout(resolve, 5000));
-        result = await this.connection.metadata.checkRetrieveStatus(retrieveResult.id);
-        if (pollCount % 5 === 0) {
-          this.log(`Waiting for metadata retrieve to complete... (${pollCount } seconds)`);
-        }
-      }
-
-      if (result.success) {
-        this.debugLog(`Metadata retrieve completed successfully`);
-        if (result.fileProperties) {
-          const fileCount = Array.isArray(result.fileProperties) ? result.fileProperties.length : 1;
-          this.debugLog(`Retrieved ${fileCount} file(s)`);
-        }
-
-        // Extract the zip file
-        this.debugLog(`Extracting zip file from retrieve result`);
-        try {
-          const zip = await JSZip.loadAsync(result.zipFile, { base64: true });
-          this.debugLog(`Zip file extracted successfully with ${Object.keys(zip.files).length} entries`);
-          return { zip, result };
-        } catch (zipError) {
-          this.handleError('extracting zip file', zipError as Error);
-        }
-      } else {
-        const errorMsg = result.errorMessage || 'Unknown error';
-        this.handleError('metadata retrieve', new Error(errorMsg));
-      }
-    } catch (error) {
-      this.handleError('retrieveMetadata', error as Error);
-    }
-  }
-
   // Compare retrieved metadata with local files
   private async compareMetadata(zip: JSZip, metadataTypes: MetadataType): Promise<ValidateRepositoryMetadataResult> {
 
@@ -202,13 +137,155 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
     const folderPath = './.sf-tempFolder';
     // Check if folder exists
     // If it exists, remove everything inside
-    MetadataHelper.prepareCleanFolder(folderPath)
-    const folder = await MetadataHelper.extractZipToFolder(zip,folderPath);
+    MetadataHelper.prepareCleanFolder(folderPath);
+    const folder = await MetadataHelper.extractZipToFolder(zip, folderPath);
     const retrievedMetadata = this.getMetadataTypesFromDirectory(folder);
-    if (retrievedMetadata === metadataTypes)
-      this.log('bla');
 
-  return result;
+    this.debugLog(`Starting metadata comparison between local and retrieved metadata`);
+
+    // Iterate through all metadata types in the local repository
+    for (const metadataType in metadataTypes) {
+      this.debugLog(`Processing metadata type: ${metadataType}`);
+
+      // Get all components for this metadata type
+      const localComponents = metadataTypes[metadataType];
+
+      // Check if this metadata type exists in the retrieved metadata
+      if (!retrievedMetadata[metadataType]) {
+        this.debugLog(`Metadata type ${metadataType} not found in retrieved metadata - all components deleted`);
+
+        // All components of this type were deleted in the org
+        for (const componentName in localComponents) {
+          const component = localComponents[componentName];
+
+          result.deleted.push({
+            changed: false,
+            componentType: metadataType,
+            created: false,
+            createdDate: new Date().toISOString(),
+            deleted: true,
+            fileName: component.path || '',
+            fullName: component.metadataName,
+            success: true,
+            metadataTypeOrigin: metadataType
+          });
+        }
+        continue;
+      }
+
+      // Get the retrieved components for this metadata type
+      const retrievedComponents = retrievedMetadata[metadataType];
+
+      // Compare each component in the local repository with the retrieved metadata
+      for (const componentName in localComponents) {
+        const localComponent = localComponents[componentName];
+
+        // Check if this component exists in the retrieved metadata
+        if (!retrievedComponents[componentName]) {
+          this.debugLog(`Component ${componentName} of type ${metadataType} not found in retrieved metadata - deleted`);
+
+          // Component was deleted in the org
+          result.deleted.push({
+            changed: false,
+            componentType: metadataType,
+            created: false,
+            createdDate: new Date().toISOString(),
+            deleted: true,
+            fileName: localComponent.path || '',
+            fullName: localComponent.metadataName,
+            success: true,
+            metadataTypeOrigin: metadataType
+          });
+        } else {
+          // Component exists in both local and retrieved metadata
+          const retrievedComponent = retrievedComponents[componentName];
+
+          // Compare the components to determine if they're the same or changed
+          // For simplicity, we'll just check if the paths are different
+          // In a real implementation, you might want to compare file contents
+          if (localComponent.path && retrievedComponent.path &&
+              this.areComponentsEqual(localComponent, retrievedComponent)) {
+            this.debugLog(`Component ${componentName} of type ${metadataType} is unchanged`);
+
+            // Component is unchanged
+            result.unchanged.push({
+              changed: false,
+              componentType: metadataType,
+              created: false,
+              createdDate: new Date().toISOString(),
+              deleted: false,
+              fileName: localComponent.path || '',
+              fullName: localComponent.metadataName,
+              success: true,
+              metadataTypeOrigin: metadataType
+            });
+          } else {
+            this.debugLog(`Component ${componentName} of type ${metadataType} has changed`);
+
+            // Component has changed
+            result.changed.push({
+              changed: true,
+              componentType: metadataType,
+              created: false,
+              createdDate: new Date().toISOString(),
+              deleted: false,
+              fileName: localComponent.path || '',
+              fullName: localComponent.metadataName,
+              success: true,
+              metadataTypeOrigin: metadataType
+            });
+          }
+        }
+      }
+    }
+
+    // Set the status based on the comparison results
+    if (result.error.length > 0) {
+      result.status = 3; // Error on component validation
+    } else if (result.changed.length > 0 || result.deleted.length > 0) {
+      result.status = 1; // Components altered in org
+    } else {
+      result.status = 0; // Repo in sync
+    }
+
+    this.debugLog(`Metadata comparison completed with status: ${result.status}`);
+    this.debugLog(`Unchanged: ${result.unchanged.length}, Changed: ${result.changed.length}, Deleted: ${result.deleted.length}, Error: ${result.error.length}`);
+
+    return result;
+  }
+
+  // Helper method to compare two components
+  private areComponentsEqual(localComponent: MetadataItem, retrievedComponent: MetadataItem): boolean {
+    try {
+      const normalize = (content: string): string => {
+        return content
+          .replace(/\r\n/g, '\n')        // Normalize line endings
+          .replace(/<!--[\s\S]*?-->/g, '') // Remove XML comments
+          .replace(/^\s+|\s+$/gm, '')    // Trim each line
+          .replace(/\s+/g, ' ')          // Normalize whitespace
+          .trim();                       // Final trim
+      };
+      if (!localComponent.path || !retrievedComponent.path) {
+        return false;
+      }
+      const localContent = fs.readFileSync(localComponent.path, 'utf8');
+      const retrievedContent = fs.readFileSync(retrievedComponent.path, 'utf8');
+
+      const normalizedLocal = normalize(localContent);
+      const normalizedRetrieved = normalize(retrievedContent);
+
+      if(normalizedLocal === normalizedRetrieved){
+        this.log(`${localComponent.metadataName} EQUAL`)
+        return true;
+
+      }
+      this.log(`${localComponent.metadataName} DIFFERENT`)
+      return false;
+    } catch (error) {
+      this.log(`${localComponent.metadataName} ERROR`)
+      this.debugLog(`Error comparing files: ${error}`);
+      return false;
+    }
   }
 
   // Cache for MetadataResolver instances to improve performance
