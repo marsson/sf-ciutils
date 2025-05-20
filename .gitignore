@@ -43,7 +43,7 @@ node_modules
 # os specific files
 .DS_Store
 .idea
-
+.junie
 oclif.manifest.json
 
 oclif.lock
