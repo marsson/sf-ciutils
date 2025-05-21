@@ -188,17 +188,6 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
         ) {
           this.debugLog(`✅ Component ${componentName} of type ${metadataType} is unchanged`);
 
-          result.unchanged.push({
-            changed: false,
-            componentType: metadataType,
-            created: false,
-            createdDate: new Date().toISOString(),
-            deleted: false,
-            fileName: localComponent.path || '',
-            fullName: localComponent.metadataName,
-            success: true,
-            metadataTypeOrigin: metadataType
-          });
         } else if (areEqual === false) {
           this.debugLog(`⚠️ Component ${componentName} of type ${metadataType} has changed`);
 
@@ -271,14 +260,14 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
       const normalizedRetrieved = normalize(retrievedContent);
 
       if (normalizedLocal === normalizedRetrieved) {
-        this.log(`${localComponent.metadataName} EQUAL`);
+        //this.log(`${localComponent.metadataName} EQUAL`);
         return true;
       }
 
-      this.log(`${localComponent.metadataName} DIFFERENT`);
+      //this.log(`${localComponent.metadataName} DIFFERENT`);
       return false;
     } catch (error) {
-      this.log(`${localComponent.metadataName} ERROR`);
+      //this.log(`${localComponent.metadataName} ERROR`);
       if (error instanceof Error && 'errno' in error) {
         this.debugLog(`Error comparing files: ${(error as { errno: number }).errno}`);
         if ((error as { errno: number }).errno === -21) {
@@ -314,7 +303,6 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
 
     if (result.response.status === 'Succeeded') {
       ux.action.stop('✔️ Retrieve complete'); // 👈 Spinner stops with success message
-      console.log(result.getFileResponses());
     } else {
       ux.action.stop(`❌ Failed: ${result.response.status}`);
     }
@@ -351,7 +339,7 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
     try {
       // Get metadata types from the directory
       this.debugLog(`Step 1: Getting componentSet from directory: ${folder}`);
-      this.log('Getting componentSet...');
+      //this.log('Getting componentSet...');
       const componentSet = this.getComponentSetFromFolder(folder);
 
 
@@ -378,13 +366,8 @@ export default class ValidateRepositoryMetadata extends SfCommand<ValidateReposi
 
       this.debugLog(`ValidateRepositoryMetadata.run() completed successfully`);
      // return comparisonResult;
-      return {
-        status: 3,
-        unchanged: [],
-        changed: [],
-        deleted: [],
-        error: []
-      };
+      this.debugLog(`ValidateRepositoryMetadata.run() completed successfully`);
+      return comparisonResult;
     } catch (error) {
       // Log the error but don't throw it since we're in the main run method
       const formattedError = this.handleError('ValidateRepositoryMetadata.run', error as Error, false);

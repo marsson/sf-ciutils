@@ -1,0 +1,310 @@
+{
+  "status": 0,
+  "result": {
+    "status": 1,
+    "unchanged": [],
+    "changed": [
+      {
+        "changed": true,
+        "componentType": "AppMenu",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:43.747Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml",
+        "fullName": "AppSwitcher",
+        "success": true,
+        "metadataTypeOrigin": "AppMenu"
+      },
+      {
+        "changed": true,
+        "componentType": "AppMenu",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:43.749Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/appMenus/Salesforce1.appMenu-meta.xml",
+        "fullName": "Salesforce1",
+        "success": true,
+        "metadataTypeOrigin": "AppMenu"
+      },
+      {
+        "changed": true,
+        "componentType": "CustomApplication",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:43.775Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/applications/standard__OnlineSales.app-meta.xml",
+        "fullName": "standard__OnlineSales",
+        "success": true,
+        "metadataTypeOrigin": "CustomApplication"
+      },
+      {
+        "changed": true,
+        "componentType": "CleanDataService",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:43.792Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml",
+        "fullName": "DataCloudGeoLocation",
+        "success": true,
+        "metadataTypeOrigin": "CleanDataService"
+      },
+      {
+        "changed": true,
+        "componentType": "EntitlementProcess",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:43.807Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/entitlementProcesses/standard case.entitlementProcess-meta.xml",
+        "fullName": "standard case",
+        "success": true,
+        "metadataTypeOrigin": "EntitlementProcess"
+      },
+      {
+        "changed": true,
+        "componentType": "NotificationTypeConfig",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:44.166Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/notificationTypeConfig/NotificationTypeConfig.config-meta.xml",
+        "fullName": "NotificationTypeConfig",
+        "success": true,
+        "metadataTypeOrigin": "NotificationTypeConfig"
+      },
+      {
+        "changed": true,
+        "componentType": "ListView",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:49.944Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/objects/Task/listViews/CompletedTasks.listView-meta.xml",
+        "fullName": "Task.CompletedTasks",
+        "success": true,
+        "metadataTypeOrigin": "ListView"
+      },
+      {
+        "changed": true,
+        "componentType": "ListView",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:49.945Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/objects/Task/listViews/DelegatedTasks.listView-meta.xml",
+        "fullName": "Task.DelegatedTasks",
+        "success": true,
+        "metadataTypeOrigin": "ListView"
+      },
+      {
+        "changed": true,
+        "componentType": "ListView",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:49.951Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/objects/Task/listViews/RecurringTasks.listView-meta.xml",
+        "fullName": "Task.RecurringTasks",
+        "success": true,
+        "metadataTypeOrigin": "ListView"
+      },
+      {
+        "changed": true,
+        "componentType": "ListView",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:49.955Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/objects/Task/listViews/UnscheduledTasks.listView-meta.xml",
+        "fullName": "Task.UnscheduledTasks",
+        "success": true,
+        "metadataTypeOrigin": "ListView"
+      },
+      {
+        "changed": true,
+        "componentType": "QuickAction",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.174Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/quickActions/SendEmail.quickAction-meta.xml",
+        "fullName": "SendEmail",
+        "success": true,
+        "metadataTypeOrigin": "QuickAction"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.272Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/AgentPlatform.settings-meta.xml",
+        "fullName": "AgentPlatform",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.287Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/Analytics.settings-meta.xml",
+        "fullName": "Analytics",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.333Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/CodeBuilder.settings-meta.xml",
+        "fullName": "CodeBuilder",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.390Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/DevHub.settings-meta.xml",
+        "fullName": "DevHub",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.407Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/EAC.settings-meta.xml",
+        "fullName": "EAC",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.426Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/EinsteinGpt.settings-meta.xml",
+        "fullName": "EinsteinGpt",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.430Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/EmailAdministration.settings-meta.xml",
+        "fullName": "EmailAdministration",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.435Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/EmailIntegration.settings-meta.xml",
+        "fullName": "EmailIntegration",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.510Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/HighVelocitySales.settings-meta.xml",
+        "fullName": "HighVelocitySales",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.568Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/MyDomain.settings-meta.xml",
+        "fullName": "MyDomain",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.622Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/PredictionBuilder.settings-meta.xml",
+        "fullName": "PredictionBuilder",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.652Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/RecommendationBuilder.settings-meta.xml",
+        "fullName": "RecommendationBuilder",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.676Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/Search.settings-meta.xml",
+        "fullName": "Search",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      },
+      {
+        "changed": true,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.691Z",
+        "deleted": false,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/SourceTracking.settings-meta.xml",
+        "fullName": "SourceTracking",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      }
+    ],
+    "deleted": [
+      {
+        "changed": false,
+        "componentType": "CustomApplication",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:43.765Z",
+        "deleted": true,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/applications/standard__LightningInstrumentation.app-meta.xml",
+        "fullName": "standard__LightningInstrumentation",
+        "success": true,
+        "metadataTypeOrigin": "CustomApplication"
+      },
+      {
+        "changed": false,
+        "componentType": "Settings",
+        "created": false,
+        "createdDate": "2025-05-20T07:33:50.529Z",
+        "deleted": true,
+        "fileName": "/Users/marsson/Projects/AgentForceMarsson/force-app/main/default/settings/InsuranceBrokerageSettings.settings-meta.xml",
+        "fullName": "InsuranceBrokerageSettings",
+        "success": true,
+        "metadataTypeOrigin": "Settings"
+      }
+    ],
+    "error": []
+  },
+  "warnings": []
+}
